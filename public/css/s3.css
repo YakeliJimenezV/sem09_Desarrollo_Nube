@@ -1,0 +1,139 @@
+
+:root {
+  --s3-bg: #081629;
+  --s3-panel: #10233d;
+  --s3-border: #29415e;
+  --s3-text: #f4f8ff;
+  --s3-muted: #a9bbd1;
+  --s3-accent: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #081629, #10284b);
+  color: var(--s3-text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.s3-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 35px 24px;
+}
+
+.s3-header,
+.s3-brand,
+.s3-gallery-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.s3-brand {
+  justify-content: flex-start;
+}
+
+.s3-brand h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.s3-brand p,
+.s3-panel p {
+  color: var(--s3-muted);
+}
+
+.s3-panel {
+  background: var(--s3-panel);
+  border: 1px solid var(--s3-border);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 28px;
+  box-shadow: 0 15px 35px #0002;
+}
+
+.s3-label {
+  color: var(--s3-accent) !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.s3-panel h2 {
+  margin: 10px 0;
+  font-size: 26px;
+}
+
+#upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+#image-file {
+  width: 100%;
+  padding: 18px;
+  background: #091b32;
+  border: 1px dashed #4b7aa5;
+  border-radius: 12px;
+  color: white;
+}
+
+.s3-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.s3-image-card {
+  background: #091b32;
+  border: 1px solid var(--s3-border);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.s3-image-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #152b47;
+}
+
+.s3-image-info {
+  padding: 15px;
+}
+
+.s3-image-info p {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.s3-image-info button {
+  margin-top: 10px;
+}
+
+#s3-message {
+  min-height: 22px;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .s3-header,
+  .s3-gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .s3-panel {
+    padding: 20px;
+  }
+}

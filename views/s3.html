@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1c36">
+
+  <title>Galería S3 | TechStore Cloud</title>
+
+  <link
+    rel="icon"
+    href="/img/brand-mark.svg"
+    type="image/svg+xml"
+  >
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/s3.css">
+
+  <!-- Sesión JWT existente de TechStore -->
+  <script src="/js/session.js" defer></script>
+
+  <!-- Funcionalidades de Amazon S3 -->
+  <script src="/js/s3.js" defer></script>
+</head>
+
+<body>
+  <main class="s3-container">
+
+    <!-- Encabezado -->
+    <header class="s3-header">
+      <div class="s3-brand">
+        <img
+          src="/img/brand-mark.svg"
+          alt="Logo TechStore"
+          width="44"
+          height="44"
+        >
+
+        <div>
+          <h1>TechStore Cloud</h1>
+          <p>Gestión de imágenes con Amazon S3</p>
+        </div>
+      </div>
+
+      <a
+        class="button button-secondary"
+        href="/dashboard"
+      >
+        Volver al Dashboard
+      </a>
+    </header>
+
+    <!-- Sección para subir imágenes -->
+    <section class="s3-panel">
+      <p class="s3-label">
+        ALMACENAMIENTO EN LA NUBE
+      </p>
+
+      <h2>Galería de imágenes S3</h2>
+
+      <p>
+        Sube, visualiza y administra imágenes
+        de forma segura mediante Amazon S3.
+      </p>
+
+      <form id="upload-form">
+        <label for="image-file">
+          Seleccionar imagen
+        </label>
+
+        <input
+          type="file"
+          id="image-file"
+          name="image"
+          accept="image/jpeg,image/png,image/webp"
+          required
+        >
+
+        <p>
+          Formatos permitidos: JPG, PNG y WEBP.
+          Tamaño máximo: 5 MB.
+        </p>
+
+        <button
+          class="button button-primary"
+          type="submit"
+          id="upload-button"
+        >
+          Subir imagen a Amazon S3
+        </button>
+      </form>
+
+      <p
+        id="s3-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+    </section>
+
+    <!-- Galería de imágenes almacenadas -->
+    <section class="s3-panel">
+      <div class="s3-gallery-heading">
+        <div>
+          <p class="s3-label">
+            ARCHIVOS ALMACENADOS
+          </p>
+
+          <h2>Imágenes almacenadas</h2>
+
+          <p>
+            Visualiza las imágenes privadas
+            mediante URLs prefirmadas temporales.
+          </p>
+        </div>
+
+        <button
+          class="button button-secondary"
+          type="button"
+          id="refresh-images"
+        >
+          Actualizar galería
+        </button>
+      </div>
+
+      <div
+        id="image-gallery"
+        class="s3-gallery"
+        aria-live="polite"
+      ></div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="s3-footer">
+      <p>
+        TechStore Cloud · Laboratorio 09
+      </p>
+
+      <p>
+        Amazon S3 · AWS SDK · URLs prefirmadas · JWT
+      </p>
+    </footer>
+
+  </main>
+</body>
+</html>

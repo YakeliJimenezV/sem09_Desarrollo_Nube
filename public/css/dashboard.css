@@ -1,0 +1,19 @@
+.session-loading { min-height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; color: var(--muted); }
+.session-loading a { font-size: 12px; color: var(--blue-600); }
+.navbar-name { font-size: 12px; font-weight: 600; }
+.dashboard-hero { margin-bottom: 22px; min-height: 210px; }
+.dashboard-hero h2 { font-size: 30px; }
+.dashboard-hero .hero-visual { max-width: 300px; }
+.table-action { min-height: 28px; font-size: 9px; padding: 5px 9px; }
+.private-empty { padding: 35px 23px !important; text-align: center; color: var(--muted); }
+#resource-body td { white-space: normal; }
+#resource-body td:first-child { min-width: 140px; }
+#resource-body td { max-width: 300px; overflow-wrap: anywhere; }
+#management-dialog h2 { margin-bottom: 22px; }
+#management-dialog .field:last-child { margin-bottom: 22px; }
+@media (max-width: 700px) {
+  .navbar-name { display: none; }
+  .dashboard-hero h2 { font-size: 28px; }
+  #resource-body td { font-size: 11px; }
+  #resource-head th { font-size: 10px; }
+}

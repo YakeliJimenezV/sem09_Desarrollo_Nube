@@ -1,0 +1,31 @@
+{
+  "name": "techstore",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sistema académico de gestión de inventario para tiendas de tecnología.",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "preview": "node src/server.js --preview",
+    "check": "node scripts/check.js",
+    "setup": "node scripts/setup.js",
+    "seed:demo": "node scripts/seed-demo.js",
+    "verify:final": "node scripts/verify-final.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1152.0",
+    "@aws-sdk/credential-providers": "^3.1152.0",
+    "@aws-sdk/s3-request-presigner": "^3.1152.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0",
+    "otplib": "^13.5.0",
+    "qrcode": "^1.5.4"
+  }
+}

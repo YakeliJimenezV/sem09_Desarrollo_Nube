@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0c1c36">
+  <title>Autenticación en dos pasos · TechStore</title>
+  <link rel="icon" href="/img/brand-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/styles.css"><link rel="stylesheet" href="/css/auth.css"><link rel="stylesheet" href="/css/legibility.css">
+  <script src="/js/session.js" defer></script><script src="/js/mfa.js" defer></script>
+</head>
+<body>
+  <div class="auth-layout mfa-layout">
+    <aside class="auth-story"><a href="/" class="brand"><img src="/img/brand-mark.svg" alt="" width="42" height="42"><span>Tech<span class="brand-accent">Store</span><small>INVENTORY MANAGEMENT</small></span></a><div class="auth-story-content"><p class="eyebrow">UN PASO MÁS. MUCHA MÁS SEGURIDAD.</p><h1>Protege tu cuenta.<br><span>Protege tu operación.</span></h1><p>Tu contraseña y un código de tu aplicación de autenticación mantienen seguro el acceso a TechStore.</p><img class="auth-story-visual" src="/img/inventory-network.svg" alt="Tu inventario conectado de forma segura" width="480" height="300"></div><div class="auth-story-footer"><svg class="icon" aria-hidden="true"><use href="/img/icons.svg#shield"></use></svg>Sin correos ni códigos por email.</div></aside>
+    <main class="auth-main"><div class="auth-card mfa-card"><a class="auth-back" href="/login" id="mfa-back">Volver al login</a><span class="eyebrow">AUTENTICACIÓN EN DOS PASOS</span><h2 id="mfa-title">Verificando tu intento…</h2><p class="text-muted" id="mfa-description">Preparando tu acceso seguro.</p><div id="mfa-message" class="form-message" role="alert" hidden></div>
+      <div id="mfa-content" hidden>
+        <section id="mfa-setup" hidden aria-label="Configuración de tu autenticador"><h3>Configura la autenticación en dos pasos</h3><ol class="mfa-instructions"><li>Abre Google Authenticator en tu celular.</li><li>Pulsa agregar cuenta (+).</li><li>Selecciona escanear código QR.</li><li>Escanea el código que aparece aquí.</li><li>Ingresa el código de 6 dígitos generado por la aplicación.</li></ol><div class="qr-panel"><img id="mfa-qr" width="280" height="280" alt="Código QR de configuración de TechStore" hidden><p id="qr-loading" role="status">Generando tu QR…</p></div><p class="field-help">También compatible con Microsoft Authenticator y Authy. El QR es privado: no lo compartas ni lo fotografíes.</p></section>
+        <form id="mfa-form"><div class="field"><label for="mfa-code">Código de 6 dígitos</label><input class="totp-input" id="mfa-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" placeholder="000000" required aria-describedby="mfa-attempts"><p class="field-help" id="mfa-attempts">Te quedan 3 intentos.</p></div><button class="button button-primary auth-submit" id="mfa-submit" type="submit">Verificar código</button></form>
+        <p class="auth-note">El código cambia cada 30 segundos. Activa la hora automática de tu celular.</p><p class="auth-note" id="mfa-expiry"></p>
+      </div><noscript><div class="notice">Activa JavaScript para completar la autenticación en dos pasos.</div></noscript>
+    </div></main>
+  </div>
+</body>
+</html>

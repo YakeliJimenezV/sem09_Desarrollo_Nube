@@ -1,0 +1,11 @@
+node_modules/
+.verification/
+.npm-cache/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+coverage/
+.DS_Store
+Thumbs.db
+.mongo-data/
